@@ -2,6 +2,7 @@
   margin: 0 ;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 nav{
@@ -52,6 +53,10 @@ nav ul li a{
   text-decoration: none;
 }
 
+nav ul li a:hover{
+  text-decoration: underline;
+}
+
 header{
   position: relative;
   text-align: center;
@@ -62,16 +67,17 @@ header{
 
 header .toggle{
   position:absolute;
-  top:30px;
-  left:10px;
-  padding:0.5rem;
+  text-align: center;
+  top:25px;
+  left:20px;
+  /* padding:0.75rem;
   background-color:#444444 ;
-  border-radius: 0.1rem;
+  border-radius: 0.1rem; */
   z-index: 10;
 }
 
 header .toggle .line{
-  width:1.3rem;
+  width:1.5rem;
   height:0.15rem;
   background:white;
 }
@@ -84,6 +90,27 @@ header .toggle:hover{
   cursor: pointer;
 }
 
+.toggle .rotate:last-child{
+  visibility: hidden;
+}
+
+.toggle .rotate:first-child{
+  transform:rotate(135deg);   
+  position: absolute;
+  top:0.75rem;
+}
+
+.toggle .rotate:nth-child(2){
+  transform:rotate(45deg);
+  position: absolute;
+  top:0.75rem;
+}
+
+.toggle :not(.last-item){
+  margin-bottom: 0.3rem;
+  transition:transform 0.05s ease-in-out;
+}
+
 header h1{
   margin-bottom:1.25rem;
 }
@@ -92,7 +119,8 @@ header p{
   margin-bottom: 1rem;
 }
 
-header .signup-btn{
+.signup-btn{
+  text-align: center;
   padding: 0.5rem 1.5rem;
   border:1px solid #444444;
   border-radius:0.1rem;
@@ -102,7 +130,7 @@ header .signup-btn{
   cursor: pointer;
 }
 
-header .signup-btn:hover{
+.signup-btn:hover{
   background: #dddddd;
   color:#444444;
 }
@@ -131,4 +159,219 @@ header .signup-btn:hover{
 
 .body-content .body-sec .double-para{
   margin-top: 0.25rem;
+}
+
+.pop-up{
+  display:none;
+  position:absolute;  
+  width:30%;
+  background-color:rgba(59,85,128,0.9);
+  color:#ffffff;
+  transform: translate(110%,-110%);
+}
+
+.popup-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(68,68,68,0.8);
+  padding:0.75rem;
+  margin-bottom: 1rem;
+}
+
+.popup-head i:hover{
+  cursor: pointer;
+  color:red;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  padding:0.5rem 1.5rem;
+}
+
+.login-form input{
+  margin-top:0.35rem;
+  margin-bottom: 0.75rem;
+  padding:0.25rem;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #ffffff;
+}
+
+.login-form .form-btn{
+  padding:0.5rem 1.75rem;
+  text-align: center;
+  background: #444444;
+  color: #ffffff;
+  border: 1px solid #444444;
+}
+
+.login-form .form-btn:hover{
+  background: #ffffff;
+  color:#444444;
+  cursor: pointer;
+}
+
+@media(max-width:975px){
+  .pop-up{  
+    width:40%;
+    transform: translate(75%,-110%);
+  }
+}
+
+@media(max-width:850px){
+  .navbar{
+    width:225px;
+  }
+
+  .pop-up{  
+    width:45%;
+    transform: translate(65%,-110%);
+  }
+
+  .container{
+    grid-template-columns: 0.5fr 4fr 0.5fr;
+  }
+}
+
+@media(max-width:750px){
+
+  .pop-up{  
+    width:50%;
+    transform: translate(50%,-110%);
+  }
+
+  header{
+    padding:1.25rem;
+  }
+}
+
+@media(max-width:650px){
+
+  .pop-up{  
+    width:55%;
+    transform: translate(45%,-115%);
+  }
+
+  .navbar{
+    width:210px;
+  }
+
+  header h1{
+    margin-bottom:1rem;
+  }
+  
+  header p{
+    margin-bottom:0.75rem;
+  }
+  
+  .signup-btn{
+    padding: 0.25rem 1.25rem;
+  }
+}
+
+
+
+@media(max-width:610px){
+  .pop-up{  
+    width:60%;
+    transform: translate(35%,-125%);
+  }
+}
+
+@media(max-width:550px){
+  header{
+    padding:1.5rem;
+  }
+
+  header h1{
+    font-size:1.75rem;
+    margin-bottom:0.75rem;
+  }
+  
+  header p{
+    margin-bottom:0.5rem;
+    font-size:0.9rem;
+  }
+  
+  .signup-btn{
+    font-size: 0.85rem;
+  }
+}
+
+@media(max-width:475px){
+  .pop-up{  
+    width:70%;
+    transform: translate(20%,-135%);
+  }
+}
+
+@media(max-width:450px){
+
+  .navbar{
+    width:200px;
+  }
+
+  header{
+    padding:1.65rem;
+  }
+
+  header h1{
+    font-size:1.65rem;
+  }
+
+  header .toggle{
+    position:absolute;
+    top:15px;
+    left:15px
+  }
+}
+
+@media(max-width:415px){
+  .pop-up{  
+    transform: translate(20%,-150%);
+  }
+}
+
+@media(max-width:375px){
+
+  .pop-up{  
+    width:75%;
+    transform: translate(15%,-155%);
+  }
+
+  .navbar{
+    width:190px;
+  }
+
+  header{
+    padding:1.75rem;
+  }
+
+  header h1{
+    font-size:1.6rem;
+    margin-bottom:0.55rem;
+    margin-top: 0.35rem;
+  }
+
+  header .toggle{
+    left:12px
+  }
+}
+
+@media(max-width:350px){
+
+  .pop-up{  
+    width:85%;
+    transform: translate(10%,-165%);
+  }
+
+  .navbar{
+    width:180px;
+  }
+
+  header h1{
+    font-size:1.45rem;
+  }
 }
