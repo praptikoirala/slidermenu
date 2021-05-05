@@ -2,7 +2,6 @@
   margin: 0 ;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 nav{
@@ -26,15 +25,15 @@ nav{
 }
 
 .navbar .img-div{
+  padding:1.5rem;
   text-align: center;
 }
 
 .navbar .nav-img{
-  margin-top:2rem;
   width:120px;
   height:100px;
   border-radius: 50%;
-  margin-bottom:2rem;
+  margin-bottom:1rem;
 }
 
 nav ul{
@@ -67,19 +66,20 @@ header{
 
 header .toggle{
   position:absolute;
+  top:20px;
+  left:10px;
   text-align: center;
-  top:25px;
-  left:20px;
-  /* padding:0.75rem;
-  background-color:#444444 ;
-  border-radius: 0.1rem; */
-  z-index: 10;
+  padding:0.75rem;
+  /* background-color:#444444 ;
+  border-radius: 0.1rem;  */
+  z-index: 5;
 }
 
 header .toggle .line{
   width:1.5rem;
   height:0.15rem;
   background:white;
+  z-index: 10;
 }
 
 header .toggle .line:not(.last-line){
@@ -90,25 +90,25 @@ header .toggle:hover{
   cursor: pointer;
 }
 
-.toggle .rotate:last-child{
+header .toggle .rotate:last-child{
   visibility: hidden;
 }
 
-.toggle .rotate:first-child{
+header .toggle .rotate:first-child{
   transform:rotate(135deg);   
   position: absolute;
   top:0.75rem;
 }
 
-.toggle .rotate:nth-child(2){
+header .toggle .rotate:nth-child(2){
   transform:rotate(45deg);
   position: absolute;
   top:0.75rem;
 }
 
-.toggle :not(.last-item){
+header .toggle .rotate:not(.last-item){
   margin-bottom: 0.3rem;
-  transition:transform 0.05s ease-in-out;
+  transition:transform 0.2s ease-in-out;
 }
 
 header h1{
@@ -322,9 +322,8 @@ header p{
   }
 
   header .toggle{
-    position:absolute;
     top:15px;
-    left:15px
+    left:15px;
   }
 }
 
@@ -356,7 +355,7 @@ header p{
   }
 
   header .toggle{
-    left:12px
+    left:12px;
   }
 }
 
